@@ -7,11 +7,16 @@ class SearchController < ApplicationController
     @organisation = params['publisher']
     @location = params['location']
     @search = Dataset.search(search_query(params))
+    time('Getting search query'){Dataset.search(search_query(params))}
+
     @num_results = @search.results.total_count
     @datasets = @search.page(page_number)
 
     gon.publishers = get_publishers
+    time('Getting publishers'){get_publishers}
+
     gon.locations = get_locations
+    time('Getting locations'){get_locations}
   end
 
   def tips
@@ -50,6 +55,11 @@ class SearchController < ApplicationController
     else
       1
     end
+  end
+
+  def time(stat, &block)
+    Rails.logger.info stat
+    Rails.logger.info "#{Benchmark.realtime(&block)} seconds"
   end
 
 end
