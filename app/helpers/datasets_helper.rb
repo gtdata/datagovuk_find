@@ -8,9 +8,10 @@ module DatasetsHelper
   }
 
   NO_MORE = {
-      'discontinued' => 'Dataset no longer updated',
+      'discontinued' => 'Dataset discontinued',
       'never' => 'No future updates',
-      'one off' => 'No future updates',
+      'one off' => 'Published once only',
+      'irregular' => 'Irregular',
       'default' => 'Not available'
   }
 

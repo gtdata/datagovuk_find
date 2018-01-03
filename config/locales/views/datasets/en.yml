@@ -42,7 +42,7 @@ en:
     meta_data:
       availability: "Availability"
       published_by: "Published by"
-      expected_update: "Expected update"
+      expected_update: "Next update"
       last_updated: "Last updated"
       no_data: "This dataset has no data yet"
       geographical_area: "Geographical area"
